@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import dev.entity.Topic;
+import dev.entity.User;
 import dev.repositories.topicRepository;
 
 @Service
@@ -17,9 +18,8 @@ public class TopicService {
 		this.topicRepo = topicRepo;
 	}
 
-	public List<Topic> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Topic> getAll(){
+		return topicRepo.findAll();
 	}
 	
 

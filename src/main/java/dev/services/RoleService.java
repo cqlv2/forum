@@ -1,8 +1,10 @@
 package dev.services;
 
-import org.springframework.http.ResponseEntity;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import dev.entity.Role;
 import dev.repositories.RoleRepository;
 
 @Service
@@ -15,8 +17,8 @@ public class RoleService {
 		this.roleRepo = roleRepo;
 	}
 	
-	public ResponseEntity<?> getAll(){
-		return null;
+	public List<Role> getAll(){
+		return roleRepo.findAll();
 	}
 	
 	

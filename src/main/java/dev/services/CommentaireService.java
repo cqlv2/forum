@@ -2,8 +2,12 @@ package dev.services;
 
 import java.util.List;
 
-import dev.entity.Commentaire;
+import org.springframework.stereotype.Service;
 
+import dev.entity.Commentaire;
+import dev.repositories.CommentaireRepository;
+
+@Service
 public class CommentaireService {
 
 	CommentaireRepository comRepo;
@@ -14,7 +18,6 @@ public class CommentaireService {
 	}
 
 	public List<Commentaire> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return comRepo.findAll();
 	}
 }

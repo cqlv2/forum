@@ -18,8 +18,7 @@ public class MessageService {
 	}
 	
 	public List<Message> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return messageRepo.findAll();
 	}
 	
 }

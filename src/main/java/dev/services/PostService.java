@@ -2,9 +2,12 @@ package dev.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import dev.entity.Post;
 import dev.repositories.PostRepository;
 
+@Service
 public class PostService {
 
 	private PostRepository postRepo;
@@ -15,8 +18,7 @@ public class PostService {
 	}
 	
 	public List<Post> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return postRepo.findAll();
 	}
 	
 }

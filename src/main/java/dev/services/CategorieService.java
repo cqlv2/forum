@@ -2,9 +2,12 @@ package dev.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import dev.entity.Categorie;
 import dev.repositories.CategorieRepository;
 
+@Service
 public class CategorieService {
 
 	private CategorieRepository catRepo;
@@ -15,7 +18,6 @@ public class CategorieService {
 	}
 
 	public List<Categorie> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return catRepo.findAll();
 	}
 }
