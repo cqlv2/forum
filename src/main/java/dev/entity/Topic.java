@@ -18,7 +18,7 @@ public class Topic {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String titre;
 	@ManyToMany
 	@JoinTable(name = "topic_cat", joinColumns = @JoinColumn(name = "id_Topic"), inverseJoinColumns = @JoinColumn(name = "id_cat"))
@@ -29,11 +29,11 @@ public class Topic {
 	@OneToOne
 	private Post dernierPost;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

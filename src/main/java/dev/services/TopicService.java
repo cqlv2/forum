@@ -5,9 +5,11 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import dev.dto.topic.TopicDtoQuery;
 import dev.entity.Topic;
 import dev.exception.repoException;
 import dev.repositories.topicRepository;
+import dev.transformer.TopicTransformer;
 
 @Service
 public class TopicService {
@@ -32,9 +34,10 @@ public class TopicService {
 			throw new repoException("id inconnu");
 	}
 
-	public Topic addUpdate(Topic t) {
-		topicRepo.save(t);
-		return t;
+	public Topic addUpdate(TopicDtoQuery t) throws repoException {
+		Topic topic=TopicTransformer.dtoToEntity(t);
+		topicRepo.save(topic);
+		return topic;
 	}
 
 	public boolean remove(int id) throws repoException {
