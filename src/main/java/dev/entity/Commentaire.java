@@ -18,6 +18,9 @@ public class Commentaire {
 	private String contain;
 	private LocalDateTime dateCreation;
 	@ManyToOne
+	@JoinColumn(name = "messageId")
+	private Message message;
+	@ManyToOne
 	@JoinColumn(name = "userId")
 	private User user;
 
@@ -52,17 +55,5 @@ public class Commentaire {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public List<Commentaire> getCommentaires() {
-		return commentaires;
-	}
-
-	public void setCommentaires(List<Commentaire> commentaires) {
-		this.commentaires = commentaires;
-	}
-
-	@ManyToOne
-	@JoinColumn(name = "post_Id")
-	private List<Commentaire> commentaires;
 
 }

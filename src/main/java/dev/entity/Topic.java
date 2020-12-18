@@ -24,7 +24,7 @@ public class Topic {
 	@JoinTable(name = "topic_cat", joinColumns = @JoinColumn(name = "id_Topic"), inverseJoinColumns = @JoinColumn(name = "id_cat"))
 	private List<Categorie> categorie;
 	@OneToMany
-	private Post post;
+	private List<Post> posts;
 	private LocalDateTime datecreation;
 	@OneToOne
 	private Post dernierPost;
@@ -53,12 +53,12 @@ public class Topic {
 		this.categorie = categorie;
 	}
 
-	public Post getPost() {
-		return post;
+	public List<Post> getPosts() {
+		return posts;
 	}
 
-	public void setPost(Post post) {
-		this.post = post;
+	public void setPost(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	public LocalDateTime getDatecreation() {
